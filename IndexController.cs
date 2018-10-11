@@ -9,24 +9,9 @@ namespace DataStructuresAssignment2._0.Controllers
     public class IndexController : Controller
     {
         // GET: Index
-        public ActionResult Stack()
+        public ActionResult Index()
         {
             return View();
-        }
-
-        public ActionResult Queue()
-        {
-            return View();
-        }
-
-        public ActionResult Dictionary()
-        {
-            return View();
-        }
-
-        public ActionResult Exit()
-        {
-            return Redirect("https://byu.edu");
         }
     }
 }
