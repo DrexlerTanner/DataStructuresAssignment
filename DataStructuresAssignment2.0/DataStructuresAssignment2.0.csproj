@@ -244,6 +244,7 @@
     <Content Include="Views\Stack\Error.cshtml" />
     <Content Include="Views\Stack\Clear.cshtml" />
     <Content Include="Views\Stack\Delete.cshtml" />
+    <Content Include="Views\Shared\_Layout2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
