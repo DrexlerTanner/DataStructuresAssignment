@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Display";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<a href="@Url.Action("Index", "Home")"
+   class="w3-bar-item w3-button">Home</a>
+<a href="@Url.Action("Index", "Stack")"
+   class="w3-bar-item w3-button">Back</a>
+
+<h2>Display</h2>
+@foreach (var stackNumber in ViewBag.MyStack)
+{
+    {
+        <p>@stackNumber</p>
+    }
+}
+
