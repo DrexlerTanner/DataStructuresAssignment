@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Stack Index</title>
+</head>
+<body>
+    <div>
+        <ul>
+            <li>
+                <a href="@Url.Action("Addone", "Stack")"
+                   class="w3-bar-item w3-button">Add an item to stack</a>
+            </li>
+            <li>
+                <a href="@Url.Action("AddMany", "Stack")"
+                   class="w3-bar-item w3-button">Add huge list of items to stack</a>
+            </li>
+            <li>
+                <a href="@Url.Action("Display", "Stack")"
+                   class="w3-bar-item w3-button">Display Stack</a>
+            </li>
+            <li>
+                <a href="@Url.Action("Delete", "Stack")"
+                   class="w3-bar-item w3-button">Delete from Stack</a>
+            </li>
+            <li>
+                <a href="@Url.Action("Index", "Home")"
+                   class="w3-bar-item w3-button">Return</a>
+            </li>
+            <li>
+                <a href="@Url.Action("Clear", "Stack")"
+                   class="w3-bar-item w3-button">Clear Stack</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
+
