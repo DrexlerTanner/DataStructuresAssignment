@@ -29,7 +29,7 @@ namespace DataStructuresAssignment2._0.Controllers
 
         public ActionResult Exit()
         {
-            return Redirect("http://www.byu.edu");
+            return Redirect("http://www.espn.com");
         }
     }
 }
