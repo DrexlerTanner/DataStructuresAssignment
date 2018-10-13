@@ -9,6 +9,7 @@ namespace DataStructuresAssignment2._0.Controllers
     public class StackController : Controller
     {
         static Stack<string> myStack = new Stack<string>();
+        static bool bDisplay = false;
         // GET: Stack
         public ActionResult Index()
         {
@@ -64,6 +65,29 @@ namespace DataStructuresAssignment2._0.Controllers
             return View("Clear");
 
         }
+        public ActionResult SearchStack()
+        {
+            ViewBag.QueueDisplay = bDisplay;
+
+            System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
+            sw.Start();
+            bool bSearch = myStack.Contains("New Entry 3");
+            sw.Stop();
+
+            TimeSpan ts = sw.Elapsed;
+            if (bSearch == true)
+            {
+                ViewBag.Search = "Found New Entry 3";
+            }
+            else
+            {
+                ViewBag.Search = "Didn't find New Entry 3";
+            }
+            ViewBag.Search += " in " + ts;
+            ViewBag.MyStack = myStack;
+            return View("SearchStack");
+        }
+
         public ActionResult Return()
         {
             return View("Index");

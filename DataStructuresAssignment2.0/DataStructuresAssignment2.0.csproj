@@ -245,6 +245,7 @@
     <Content Include="Views\Stack\Clear.cshtml" />
     <Content Include="Views\Stack\Delete.cshtml" />
     <Content Include="Views\Shared\_Layout2.cshtml" />
+    <Content Include="Views\Stack\SearchStack.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
