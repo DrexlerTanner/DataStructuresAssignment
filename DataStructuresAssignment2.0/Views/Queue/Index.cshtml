@@ -29,6 +29,8 @@
                 <h2>Queue</h2>
             </div>
         </div>
+        <h2>@ViewBag.DeleteError</h2>
+        <h3>@ViewBag.Search</h3>
         @if (ViewBag.MyQueue != null && ViewBag.QueueDisplay == true)
         {
             foreach (var sData in ViewBag.MyQueue)
@@ -39,8 +41,7 @@
         else
         {
         }
-        <h2>@ViewBag.DeleteError</h2>
-        <h3>@ViewBag.Search</h3>
+
 
     </div>
 
