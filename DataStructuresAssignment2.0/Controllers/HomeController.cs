@@ -27,6 +27,7 @@ namespace DataStructuresAssignment2._0.Controllers
             return View();
         }
 
+
         public ActionResult Exit()
         {
             return Redirect("http://www.byu.edu");

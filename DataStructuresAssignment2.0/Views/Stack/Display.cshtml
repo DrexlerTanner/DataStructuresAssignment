@@ -1,18 +1,56 @@
 ﻿
 @{
     ViewBag.Title = "Display";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
 }
-<a href="@Url.Action("Index", "Home")"
-   class="w3-bar-item w3-button">Home</a>
-<a href="@Url.Action("Index", "Stack")"
-   class="w3-bar-item w3-button">Back</a>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-<h2>Display</h2>
-@foreach (var stackNumber in ViewBag.MyStack)
-{
-    {
-        <p>@stackNumber</p>
-    }
-}
+<body>
+    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" width:10% id="mySidebar">
+        <button class="w3-bar-item w3-button w3-large"
+                onclick="w3_close()">
+            Close &times;
+        </button>
+        <a href="@Url.Action("AddOne", "Stack")" class="w3-bar-item w3-button">1. Add one item to Stack</a>
+        <a href="@Url.Action("AddMany", "Stack")" class="w3-bar-item w3-button">2. Add a Huge List of Items to Stack</a>
+        <a href="@Url.Action("Display", "Stack")" class="w3-bar-item w3-button">3. Display Stack</a>
+        <a href="@Url.Action("Delete", "Stack")" class="w3-bar-item w3-button">4. Delete from Stack</a>
+        <a href="@Url.Action("Clear", "Stack")" class="w3-bar-item w3-button">5. Clear Stack</a>
+        <a href="@Url.Action("Search", "Stack")" class="w3-bar-item w3-button">6. Search Stack</a>
+        <a href="@Url.Action("Exit", "Stack")" class="w3-bar-item w3-button">7. Return to Main Menu</a>
+    </div>
 
+    <div id="main">
+
+        <div class="w3-teal">
+            <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
+            <div class="w3-container">
+                <h2>Stack</h2>
+            </div>
+        </div>
+
+        <h2>Display</h2>
+        @foreach (var stackNumber in ViewBag.MyStack)
+        {
+            {
+                <p>@stackNumber</p>
+            }
+        }
+    </div>
+
+    <script>
+        function w3_open() {
+            document.getElementById("main").style.marginLeft = "25%";
+            document.getElementById("mySidebar").style.width = "25%";
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("openNav").style.display = 'none';
+        }
+        function w3_close() {
+            document.getElementById("main").style.marginLeft = "0%";
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("openNav").style.display = "inline-block";
+        }
+    </script>
+
+</body>
