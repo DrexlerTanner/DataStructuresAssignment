@@ -71,6 +71,24 @@ namespace DataStructuresAssignment2._0.Controllers
 
         public ActionResult Search()
         {
+            ViewBag.QueueDisplay = bDisplay;
+
+            System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
+            sw.Start();
+            bool bSearch = myQueue.Contains("New Entry 3");
+            sw.Stop();
+
+            TimeSpan ts = sw.Elapsed;
+            if (bSearch == true)
+            {
+                ViewBag.Search = "Found New Entry 3";
+            }
+            else
+            {
+                ViewBag.Search = "Didn't find New Entry 3";
+            }
+            ViewBag.Search += " in " + ts;
+            ViewBag.MyQueue = myQueue;
             return View("Index");
         }
 
