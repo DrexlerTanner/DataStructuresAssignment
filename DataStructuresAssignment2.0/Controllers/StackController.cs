@@ -65,7 +65,7 @@ namespace DataStructuresAssignment2._0.Controllers
             return View("Clear");
 
         }
-        public ActionResult SearchStack()
+        public ActionResult Search()
         {
             ViewBag.QueueDisplay = bDisplay;
 
@@ -85,7 +85,7 @@ namespace DataStructuresAssignment2._0.Controllers
             }
             ViewBag.Search += " in " + ts;
             ViewBag.MyStack = myStack;
-            return View("SearchStack");
+            return View("Search");
         }
 
         public ActionResult Return()
