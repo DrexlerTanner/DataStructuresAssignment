@@ -40,9 +40,16 @@ namespace DataStructuresAssignment2._0.Controllers
 
         public ActionResult Display()
         {
-            bDisplay = true;
-            ViewBag.QueueDisplay = bDisplay;
-            ViewBag.MyQueue = myQueue;
+            if (myQueue.Count == 0)
+            {
+                ViewBag.Show = "There's nothing to be displayed :<";
+            }
+            else
+            {
+                bDisplay = true;
+                ViewBag.QueueDisplay = bDisplay;
+                ViewBag.MyQueue = myQueue;
+            }
             return View("Index");
         }
 
@@ -51,7 +58,7 @@ namespace DataStructuresAssignment2._0.Controllers
             ViewBag.QueueDisplay = bDisplay;
             if (myQueue.Count == 0)
             {
-                ViewBag.DeleteError = "There's nothing to be deleted :<";
+                ViewBag.Show = "There's nothing you can delete :<";
             }
             else
             {
@@ -66,6 +73,7 @@ namespace DataStructuresAssignment2._0.Controllers
             bDisplay = false;
             myQueue.Clear();
             ViewBag.QueueDisplay = bDisplay;
+            ViewBag.Show = "If you'd like to see the Queue, please click on the display button on the side bar :>";
             return View("Index");
         }
 
@@ -81,13 +89,13 @@ namespace DataStructuresAssignment2._0.Controllers
             TimeSpan ts = sw.Elapsed;
             if (bSearch == true)
             {
-                ViewBag.Search = "Found New Entry 3";
+                ViewBag.Show = "Found New Entry 3";
             }
             else
             {
-                ViewBag.Search = "Didn't find New Entry 3";
+                ViewBag.Show = "Didn't find New Entry 3";
             }
-            ViewBag.Search += " in " + ts;
+            ViewBag.Show += " in " + ts;
             ViewBag.MyQueue = myQueue;
             return View("Index");
         }
