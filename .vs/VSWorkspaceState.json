@@ -1,6 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\DataStructuresAssignment2.0",
+    "\\DataStructuresAssignment2.0\\Controllers",
+    "\\DataStructuresAssignment2.0\\Views",
+    "\\DataStructuresAssignment2.0\\Views\\Stack"
   ],
+  "SelectedNode": "\\DataStructuresAssignment2.0\\Controllers\\HomeController.cs",
   "PreviewInSolutionExplorer": false
 }
