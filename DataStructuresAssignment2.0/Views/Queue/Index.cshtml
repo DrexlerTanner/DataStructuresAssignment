@@ -9,7 +9,7 @@
 <body>
     <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" width:10% id="mySidebar">
         <button class="w3-bar-item w3-button w3-large"
-                onclick="w3_close()">
+                onclick="count()">
             Close &times;
         </button>
         <a href="@Url.Action("AddOne", "Queue")" class="w3-bar-item w3-button">1. Add one item to Queue</a>
@@ -24,13 +24,11 @@
     <div id="main">
 
         <div class="w3-teal">
-            <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
+            <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="count()" align="middle">&#9776; Queue</button>
             <div class="w3-container">
-                <h2>Queue</h2>
             </div>
         </div>
-        <h2>@ViewBag.DeleteError</h2>
-        <h3>@ViewBag.Search</h3>
+        <h3>@ViewBag.Show</h3>
         @if (ViewBag.MyQueue != null && ViewBag.QueueDisplay == true)
         {
             foreach (var sData in ViewBag.MyQueue)
@@ -42,20 +40,32 @@
         {
         }
 
-
     </div>
 
     <script>
+        function count() {
+            if (count.num % 2 === 0) {
+                w3_open();
+                count.num++;
+            } else {
+                w3_close();
+                count.num++;
+            }
+        }
+
+        // initialize count number
+        count.num = 0;
+
         function w3_open() {
-          document.getElementById("main").style.marginLeft = "25%";
-          document.getElementById("mySidebar").style.width = "25%";
-          document.getElementById("mySidebar").style.display = "block";
-          document.getElementById("openNav").style.display = 'none';
+            document.getElementById("main").style.marginLeft = "25%";
+            document.getElementById("mySidebar").style.width = "25%";
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("openNav").style.display = "inline-block";
         }
         function w3_close() {
-          document.getElementById("main").style.marginLeft = "0%";
-          document.getElementById("mySidebar").style.display = "none";
-          document.getElementById("openNav").style.display = "inline-block";
+            document.getElementById("main").style.marginLeft = "0%";
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("openNav").style.display = "inline-block";
         }
     </script>
 
