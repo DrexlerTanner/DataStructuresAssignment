@@ -10,7 +10,7 @@ namespace DataStructuresAssignment2._0.Controllers
     {
         public ActionResult Index()
         {
-            return View(); 
+            return View();
         }
 
         public ActionResult About()
