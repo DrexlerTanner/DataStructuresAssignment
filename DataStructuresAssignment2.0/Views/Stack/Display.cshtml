@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
+@*Here is the menu of the side bar with it's called methods and controllers*@
 <body>
     <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" width:10% id="mySidebar">
         <button class="w3-bar-item w3-button w3-large"
@@ -21,14 +22,17 @@
         <a href="@Url.Action("Index", "Home")" class="w3-bar-item w3-button">7. Return to Main Menu</a>
     </div>
 
+
     <div id="main">
 
+        @*Here is the action calls for the side bar*@
         <div class="w3-teal">
             <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;Stack</button>
             <div class="w3-container">
             </div>
         </div>
 
+        @*Code to display the stack and its contents*@
         <h2>Display</h2>
         @foreach (var stackNumber in ViewBag.MyStack)
         {
@@ -38,6 +42,7 @@
         }
     </div>
 
+    @*Java for the side navigation bar*@
     <script>
         function w3_open() {
             document.getElementById("main").style.marginLeft = "25%";

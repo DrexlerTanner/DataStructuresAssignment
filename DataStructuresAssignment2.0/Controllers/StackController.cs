@@ -16,7 +16,8 @@ namespace DataStructuresAssignment2._0.Controllers
             ViewBag.MyStack = myStack;
             return View();
         }
-
+        
+        // Method for adding one item to stack
         public ActionResult AddOne()
         {
 
@@ -26,6 +27,7 @@ namespace DataStructuresAssignment2._0.Controllers
             return View("Index");
         }
 
+        //Method for adding 2000 items to stack
         public ActionResult AddMany()
         {
             myStack.Clear();
@@ -36,6 +38,8 @@ namespace DataStructuresAssignment2._0.Controllers
             ViewBag.MyStack = myStack;
             return View("Index");
         }
+
+        //Method for displaying the contents of the stack, or to call an error display if stack is empty
         public ActionResult Display()
         {
             if(myStack.Count == 0)
@@ -47,6 +51,8 @@ namespace DataStructuresAssignment2._0.Controllers
             return View("Display");
             }
         }
+
+        //Method to delete one item from off the stack
         public ActionResult Delete()
         {
             if (myStack.Count == 0)
@@ -59,12 +65,16 @@ namespace DataStructuresAssignment2._0.Controllers
             }
             return View("Delete");
         }
+
+        //Method to delete all contents of the stack
         public ActionResult Clear()
         {
             myStack.Clear();
             return View("Clear");
 
         }
+
+        //Method to search for one particular item on the stack
         public ActionResult Search()
         {
             ViewBag.QueueDisplay = bDisplay;
@@ -88,6 +98,7 @@ namespace DataStructuresAssignment2._0.Controllers
             return View("Search");
         }
 
+        //Method to return to the home screen
         public ActionResult Return()
         {
             return View("Index");
