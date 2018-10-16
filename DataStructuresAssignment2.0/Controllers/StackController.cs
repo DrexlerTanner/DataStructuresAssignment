@@ -17,6 +17,7 @@ namespace DataStructuresAssignment2._0.Controllers
             return View();
         }
 
+        //Code for the AddOne function- Adds one item to stack
         public ActionResult AddOne()
         {
 
@@ -26,27 +27,33 @@ namespace DataStructuresAssignment2._0.Controllers
             return View("Index");
         }
 
+        //Adds many items to stack
         public ActionResult AddMany()
         {
             myStack.Clear();
             while (myStack.Count < 2000)
-            { 
+            {
                 myStack.Push("New Entry " + (myStack.Count + 1));
             }
             ViewBag.MyStack = myStack;
             return View("Index");
         }
+
+        //Displays the current contents of the stack
         public ActionResult Display()
         {
-            if(myStack.Count == 0)
+            if (myStack.Count == 0)
             {
                 return View("Error");
             }
-            else { 
-            ViewBag.MyStack = myStack;
-            return View("Display");
+            else
+            {
+                ViewBag.MyStack = myStack;
+                return View("Display");
             }
         }
+
+        //Deletes one item from off the stack
         public ActionResult Delete()
         {
             if (myStack.Count == 0)
@@ -59,12 +66,16 @@ namespace DataStructuresAssignment2._0.Controllers
             }
             return View("Delete");
         }
+
+        //Clears the whole contents from the whole stack
         public ActionResult Clear()
         {
             myStack.Clear();
             return View("Clear");
 
         }
+
+        //Searches for a specific content on the stack
         public ActionResult Search()
         {
             ViewBag.QueueDisplay = bDisplay;
@@ -88,6 +99,7 @@ namespace DataStructuresAssignment2._0.Controllers
             return View("Search");
         }
 
+        //Returns to the main menu
         public ActionResult Return()
         {
             return View("Index");

@@ -42,6 +42,7 @@ namespace DataStructuresAssignment2._0.Controllers
         {
             if (myQueue.Count == 0)
             {
+                bDisplay = true;
                 ViewBag.Show = "There's nothing to be displayed :<";
             }
             else
